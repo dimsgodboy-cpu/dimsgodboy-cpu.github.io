@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kasir Modern</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +13,7 @@
   <!-- LEFT -->
   <div class="left">
 
-    <h2>🛒 Kasir</h2>
+    <h2>🛒 Kasir Japuk</h2>
 
     <input type="text" id="barcode" placeholder="Scan / input barcode">
 
@@ -40,6 +41,8 @@
     <input type="number" id="bayar" placeholder="Uang bayar">
 
     <button class="btn-bayar" onclick="bayar()">Bayar</button>
+
+    <button onclick="tambahBarang(barcode.value)">Tambah</button>
 
     <h3 id="kembalian"></h3>
 
