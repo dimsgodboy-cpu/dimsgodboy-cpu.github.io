@@ -1,59 +1,101 @@
 body {
-  font-family: Franklin Gothic Medium ;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f6fa;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT */
+.left {
+  flex: 2;
+  background: white;
   padding: 20px;
-  background: #f4f4f4;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
 }
 
-h1 {
-  color: #333;
+.left h2 {
+  margin-bottom: 10px;
 }
 
-input {
-  padding: 10px;
-  margin: 10px 0;
-  width: 300px;
+#barcode {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
 }
 
+/* TABLE */
 table {
   width: 100%;
-  background: white;
   border-collapse: collapse;
 }
 
-th, td {
-  border: 1px solid #ddd;
+th {
+  text-align: left;
   padding: 10px;
-  text-align: center;
+  background: #fafafa;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 button {
-  padding: 10px 20px;
-  background: green;
-  color: white;
   border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 button:hover {
-  background: darkgreen;
+  opacity: 0.8;
 }
 
-button {
-  margin: 2px;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-a button {
-  margin-bottom: 15px;
-  padding: 8px 15px;
-  background: orange;
-  border: none;
+/* RIGHT */
+.right {
+  flex: 1;
+  background: #2f3640;
   color: white;
-  font-weight: bold;
-  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-a button:hover {
-  background: darkorange;
+.right h1 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+#bayar {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.btn-bayar {
+  padding: 15px;
+  background: #00a8ff;
+  color: white;
+  font-size: 18px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 }
