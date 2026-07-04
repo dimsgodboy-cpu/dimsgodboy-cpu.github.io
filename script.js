@@ -204,3 +204,32 @@ function printStruk() {
   win.document.write(struk);
   win.print();
 }
+
+function startScan() {
+  const html5QrCode = new Html5Qrcode("reader");
+
+  html5QrCode.start(
+    { facingMode: "environment" }, // kamera belakang
+    {
+      fps: 10,
+      qrbox: 250
+    },
+    (decodedText) => {
+      // 🔥 MASUKKAN KE INPUT
+      document.getElementById("barcode").value = decodedText;
+
+      // 🔥 TRIGGER TAMBAH KE KERANJANG
+      tambahBarang(decodedText);
+
+      // 🔥 STOP CAMERA SETELAH SCAN
+      html5QrCode.stop();
+      document.getElementById("reader").innerHTML = "";
+    },
+    (errorMessage) => {
+      // optional error
+    }
+  ).catch(err => {
+    alert("Kamera tidak bisa diakses!");
+    console.log(err);
+  });
+}

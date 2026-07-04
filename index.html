@@ -77,6 +77,9 @@
 
 <!-- INPUT BARCODE -->
 <input type="text" id="barcode" placeholder="Scan / input barcode" autofocus>
+<button onclick="startScan()">📷 Scan Barcode</button>
+
+<div id="reader" style="width:100%; max-width:300px; margin:auto;"></div>
 
 <!-- TABEL KERANJANG -->
 <table>
@@ -106,6 +109,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+<script src="https://unpkg.com/html5-qrcode"></script>
 
 </body>
 </html> 
