@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Stok</title>
+  <style>
+    body { font-family: Arial; background:#111; color:white; }
+    table { width:100%; border-collapse: collapse; margin-top:20px;}
+    th, td { padding:10px; border:1px solid #333; text-align:center;}
+    input { padding:5px; }
+    button { padding:5px 10px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<h2>📊 Dashboard Admin Stok</h2>
+
+<input type="text" id="search" placeholder="Cari barang..." onkeyup="renderTable()">
+
+<h3>➕ Tambah Barang</h3>
+<input id="kode" placeholder="Kode">
+<input id="nama" placeholder="Nama">
+<input id="harga" type="number" placeholder="Harga">
+<input id="stok" type="number" placeholder="Stok">
+<button onclick="tambahBarangBaru()">Tambah</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kode</th>
+      <th>Nama</th>
+      <th>Harga</th>
+      <th>Stok</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody id="table"></tbody>
+</table>
+<button onclick="logout()">🚪 Logout</button>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+  font-family: Franklin Gothic Medium ;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 300px;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darkgreen;
+}
+
+button {
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+a button {
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  background: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a button:hover {
+  background: darkorange;
+}

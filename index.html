@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kasir Minimarket</title>
+
+  <!-- 🔥 MOBILE FRIENDLY -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🔥 PWA (APP HP) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff6600">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 10px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .admin-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .admin-btn button {
+      width: auto;
+      background: orange;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .admin-btn button:hover {
+      background: darkorange;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🏪 Kasir GI</h1>
+
+<!-- 🔐 TOMBOL ADMIN -->
+<div class="admin-btn">
+  <a href="login.html">
+    <button>⚙️ Admin</button>
+  </a>
+</div>
+
+<!-- INPUT BARCODE -->
+<input type="text" id="barcode" placeholder="Scan / input barcode" autofocus>
+
+<!-- TABEL KERANJANG -->
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Harga</th>
+      <th>Qty</th>
+      <th>Total</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody id="cart"></tbody>
+</table>
+
+<!-- TOTAL -->
+<h2>Total: Rp <span id="total">0</span></h2>
+
+<!-- PEMBAYARAN -->
+<input type="number" id="bayar" placeholder="Uang bayar">
+<button onclick="bayar()">💰 Bayar</button>
+
+<!-- KEMBALIAN -->
+<h3 id="kembalian"></h3>
+
+<script src="script.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+
+</body>
+</html>
