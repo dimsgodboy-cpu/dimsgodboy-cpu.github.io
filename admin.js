@@ -13,19 +13,6 @@ if (localStorage.getItem("isLogin") !== "true") {
   window.location.href = "login.html";
 }
 
-// LOAD DATA
-function loadData() {
-  let data = localStorage.getItem("barangDB");
-
-  if (data) {
-    barangDB = JSON.parse(data);
-  }
-}
-
-// SIMPAN DATA
-function saveData() {
-  localStorage.setItem("barangDB", JSON.stringify(barangDB));
-}
 
 // RENDER TABLE
 function renderTable() {
@@ -74,23 +61,19 @@ function tambahBarangBaru() {
   let harga = parseInt(document.getElementById("harga").value);
   let stok = parseInt(document.getElementById("stok").value);
 
-  db.ref("barang/" + kode).set({
-    nama,
-    harga,
-    stok
-  });
-}
+  if (!kode || !nama || !harga || !stok) {
+    alert("Isi semua data!");
+    return;
+  }
 
-  barangDB[kode] = { nama, harga, stok };
-
-  saveData();
-  renderTable();
+  db.ref("barang/" + kode).set({ nama, harga, stok });
 
   // reset input
   document.getElementById("kode").value = "";
   document.getElementById("nama").value = "";
   document.getElementById("harga").value = "";
   document.getElementById("stok").value = "";
+}
 
 
 function logout() {

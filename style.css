@@ -1,93 +1,96 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f6fa;
+  font-family: 'Poppins', sans-serif;
+  background: #eef2f7;
 }
 
-/* MOBILE FIRST */
+/* LAYOUT */
 .container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
-/* INPUT BARCODE */
+/* LEFT */
+.left {
+  flex: 2;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  background: #1e272e;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* INPUT */
 #barcode {
   width: 100%;
-  padding: 18px;
-  font-size: 20px;
-  border: none;
-  border-bottom: 2px solid #ddd;
-  outline: none;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
 }
 
 /* TABLE */
 table {
   width: 100%;
-  font-size: 18px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #2f3640;
+  color: white;
 }
 
 th, td {
   padding: 12px;
+  text-align: center;
 }
 
+/* BUTTON */
 button {
-  padding: 10px 14px;
-  font-size: 18px;
-  border-radius: 8px;
-}
-
-/* TOTAL PANEL (FIXED BAWAH) */
-.right {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #2f3640;
-  color: white;
-  padding: 20px;
-  box-shadow: 0 -5px 10px rgba(0,0,0,0.2);
-}
-
-.right h1 {
-  font-size: 36px;
-}
-
-#bayar {
-  width: 100%;
-  padding: 15px;
-  font-size: 20px;
-  margin-top: 10px;
-  border-radius: 10px;
   border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn-bayar {
-  width: 100%;
-  padding: 18px;
-  font-size: 20px;
-  margin-top: 10px;
   background: #00a8ff;
   color: white;
+  padding: 15px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
-/* DESKTOP MODE */
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-  }
+button:hover {
+  opacity: 0.9;
+}
 
-  .left {
-    flex: 2;
-    padding: 20px;
+/* TOTAL */
+.right h1 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
 
   .right {
-    position: relative;
-    flex: 1;
-    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
 }
